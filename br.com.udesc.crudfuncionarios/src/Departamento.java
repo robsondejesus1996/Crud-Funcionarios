@@ -1,42 +1,51 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
+import java.util.ArrayList;
 
 /**
- *
  * @author Robson de Jesus
  */
 public class Departamento {
-    
-    private int codigo;
-    private String nome; 
+    private int Codigo;
+    private String Nome;
+    ArrayList<Funcionario> ListaFunc;
 
     public Departamento() {
+        ListaFunc = new ArrayList();
     }
 
-    public Departamento(int codigo, String nome) {
-        this.codigo = codigo;
-        this.nome = nome;
+    public Departamento(int Codigo, String Nome) {
+        this.Codigo = Codigo;
+        this.Nome = Nome;
+        ListaFunc = new ArrayList();
     }
 
     public int getCodigo() {
-        return codigo;
+        return Codigo;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodigo(int Codigo) {
+        this.Codigo = Codigo;
     }
 
     public String getNome() {
-        return nome;
+        return Nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String Nome) {
+        this.Nome = Nome;
+    }
+
+    public ArrayList<Funcionario> getListaFunc() {
+        return ListaFunc;
+    }
+
+    public void setListaFunc(ArrayList<Funcionario> ListaFunc) {
+        this.ListaFunc = ListaFunc;
     }
     
-    
-    
+    public void addFunc(Funcionario F){
+        F.setDep(this);
+        ListaFunc.add(F);
+    }
 }
